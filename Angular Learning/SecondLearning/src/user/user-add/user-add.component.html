@@ -1,0 +1,47 @@
+<form #addForm="ngForm">
+    <table class="table" style="width: 100%;">
+        <caption><h5><b>Add User </b>           
+        </h5>     
+        </caption>
+    <tr>
+        <td>
+    UserName
+        </td>
+        <td>
+           <input type="text" name="userName" required minlength="2" class="form-control"  ngModel>
+        </td>
+    </tr>
+    <tr>
+        <td>
+    Age
+        </td>
+        <td>
+            <input type="text" name="userAge" required  class="form-control"  ngModel>                    
+        </td>
+    </tr>
+    <tr>
+        <td>
+    Sex
+        </td>
+        <td>
+            <input type="text" name="userSex" required class="form-control"  ngModel>
+            
+        </td>
+    </tr>
+    <tr>
+        <td>
+
+        </td>
+        <td class="text-center">
+            <input type="button" class="btn-success" value="Add User" (click)="add(addForm)" [disabled]="!addForm.valid">
+        </td>
+    </tr> 
+    <tr *ngIf="addForm.touched && !addForm.valid">
+        <td colspan="2" class="text-danger">
+            Please provide Data
+        </td>
+    </tr>         
+    
+    </table>    
+
+</form>

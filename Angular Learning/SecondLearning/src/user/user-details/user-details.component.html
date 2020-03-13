@@ -1,0 +1,79 @@
+<div class="row content">
+<div class="col-sm-3">
+    <table class="table" style="width: 100%;">
+        <caption><h5><b>Users List</b></h5>
+        <input type="button" class="btn-primary" value="Add User" (click)="OnAddUser()">
+        </caption>
+        <tr *ngFor="let user of users;index as i" class="table-success">
+            <td class="table-success"> 
+<a  (click)="OnLinkClick(i)">{{user.userName}}</a>
+            </td>
+            <td class="btn-group">               
+                <input type="button" class="btn-primary" value="Edit" (click)="OnEdit(i)">                
+            </td>
+            <td class="btn-group">                
+                <input type="button" class="btn-primary" value="Delete" (click)="OnDelete(i)">
+            </td>
+        </tr>
+
+    </table>
+
+</div>
+<div class="col-sm-4" *ngIf="linkClicked && !isEditClicked && !isDeleteClicked && !isAddUserClicked">
+<table class="table" style="width: 100%;">
+    <caption><h5><b>User Detail </b>
+        <!-- <button class="btn-primary">Edit</button>&nbsp;
+        <button class="btn-primary">Delete</button> -->
+    </h5>     
+    </caption>
+<tr>
+    <td>
+UserName
+    </td>
+    <td>
+        {{currentUser.userName}}
+    </td>
+</tr>
+<tr>
+    <td>
+Age
+    </td>
+    <td>
+        {{currentUser.age}}
+    </td>
+</tr>
+<tr>
+    <td>
+Sex
+    </td>
+    <td>
+        {{currentUser.sex}}
+    </td>
+</tr>
+
+</table>
+
+
+
+
+
+</div>
+
+
+<div class="col-sm-4" *ngIf="!linkClicked && !isEditClicked && isDeleteClicked && !isAddUserClicked">    
+    <app-user-delete [currentIndex]="currentIndex" [currentUser]="currentUser" (afterDelete)="delete($event)" ></app-user-delete>
+    </div>
+
+    <div class="col-sm-4" *ngIf="!linkClicked && isEditClicked && !isDeleteClicked && !isAddUserClicked">       
+        <app-user-edit [currentUser]="currentUser" (afterUpdate)="update($event)"></app-user-edit>
+        </div>
+
+<div>
+
+</div>
+
+<div class="col-sm-4" *ngIf="!linkClicked && !isEditClicked && !isDeleteClicked &&  isAddUserClicked">    
+    <app-user-add (afterAdd)="add($event)"></app-user-add>
+</div>
+
+</div>
