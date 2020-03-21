@@ -12,7 +12,7 @@ import {FormsModule} from '@angular/forms'
 
 const routes:Routes=[
   {
-    path:'User',redirectTo:'/User/Details'
+    path:'User',redirectTo:'User/Details'
     // children:[
     //   {path:'Details',component:UserDetailsComponent},
     //   {path:'Add',component:UserAddComponent}
