@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import {CategoryModule} from '../category/category.module';
-import {SubcategoryModule} from '../subcategory/subcategory.module';
-import {ItemModule} from '../item/item.module';
+import {CategoryModule} from '../modules/category/category.module';
+import {SubcategoryModule} from '../modules/subcategory/subcategory.module';
+import {ItemModule} from '../modules/item/item.module';
 
 
 @NgModule({
