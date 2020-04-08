@@ -20,12 +20,13 @@
   
           </div>
           <div class="row h-50" style="background-color:grey">
-            <!-- <div class="col-sm-12 h-100"> -->
+            <!-- <div class="col-sm-12 h-100 w-100" style="width: 100%;"> -->
               <div class="tab">
                 <button class="tablinks" [class.active]="tabSelected === 'Home'" (click)="tabClick('Home')">Home</button>
                 <button class="tablinks" [class.active]="tabSelected === 'Category'" (click)="tabClick('Category')">Category</button>
                 <button class="tablinks" [class.active]="tabSelected === 'SubCategory'" (click)="tabClick('SubCategory')">SubCategory</button>
                 <button class="tablinks" [class.active]="tabSelected === 'Items'" (click)="tabClick('Items')">Items</button>
+                <button class="tablinks pull-right" [class.active]="tabSelected === authText" (click)="tabClick(authText)">{{authText}}</button>
               </div>  
           <!-- </div> -->
   
@@ -40,12 +41,12 @@
         <router-outlet></router-outlet>
       </div>
     
-    <div class="footer">
+    <!-- <div class="footer" >
       <div class="row">
         <hr style="border-top: 1px solid orange"/>      
         <p>footer</p>
         </div>
-      </div>
+      </div> -->
     
 
 </div>

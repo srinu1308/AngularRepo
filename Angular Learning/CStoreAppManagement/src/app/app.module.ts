@@ -7,12 +7,17 @@ import { HomeComponent } from './home/home.component';
 import {CategoryModule} from '../modules/category/category.module';
 import {SubcategoryModule} from '../modules/subcategory/subcategory.module';
 import {ItemModule} from '../modules/item/item.module';
+import { LoginComponent } from './login/login.component';
+import {FormsModule} from '@angular/forms';
+// import {JwPaginationComponent} from 'jw-angular-pagination';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    // JwPaginationComponent
     
   ],
   imports: [
@@ -20,7 +25,8 @@ import {ItemModule} from '../modules/item/item.module';
     AppRoutingModule,
     CategoryModule,
     SubcategoryModule,
-    ItemModule
+    ItemModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

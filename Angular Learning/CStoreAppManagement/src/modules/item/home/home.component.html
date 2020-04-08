@@ -1,7 +1,75 @@
 <div class="container-fluid">
-    <div class="row" style="margin-top: 10px;">
-    <div class="col-sm-12">
-        <p>Item home works!</p>
+    <div class="row" style="margin-top:10px;">
+        <div class="col-sm-12">
+            <div class="panel panel-info" style="max-height: 75vmax;height: 75vh;;">
+                <!-- <div class="panel-title">C-Store App Management</div> -->
+                <!-- <div class="panel-heading">Category</div> -->
+                <div class="panel-body">
+                <div>
+                   
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="panel panel-info" style="max-height: 70vmax;height: 65vh;;">
+                                <div class="panel-heading" style="height: 10%;">
+                                    Category Index
+
+                                   <button class="button btn-link pull-right" (click)="AddNew()">Add New</button>
+                                
+                                </div>
+                                <div class="panel-body" style="height: 70%;">
+
+                                    <table class="table table-primary" style="width: 100%;">
+                                        <tr>
+                                            <th>Category Name</th>
+                                            <th>IsActive</th>
+                                            <th>Actions</th>
+                                        </tr>
+
+                                        <tr *ngFor="let item of pagedItems" class="">
+                                            <td>
+                                                {{item.NameEN}}
+                                            </td>
+                                            <td>
+                                                {{item.IsActive}}
+                                            </td>
+                                            <td>
+                                                <button class="btn-info" (click)="Details()">Details</button>&nbsp;
+                                                <button class="btn-success" (click)="Edit()">Edit</button>&nbsp;
+                                                <button class="btn-primary" (click)="Delete()">Delete</button>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+
+                                    <!-- <div *ngFor="let item of pagedItems">
+
+
+
+                                    </div> -->
+                                   
+                                </div>
+                                <div class="panel-footer align-top" style="height: 20%;">
+                                    <jw-pagination [pageSize]="8"  [items]="data" (changePage)="beginPagination($event)"></jw-pagination>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-sm-8" *ngIf="!isClicked">
+                            <app-noitem></app-noitem>
+                        </div>
+
+                        <div class="col-sm-8">
+                            <router-outlet></router-outlet>
+                        </div>
+
+                    </div>
+
+                </div>    
+            </div>
+        </div>
     </div>
     </div>
-    </div>
+
+
+
